@@ -1,0 +1,221 @@
+.error {
+    position: absolute;
+    color: #F00;
+    font-family: Comic Sans Ms;
+    font-size: 25px;
+    left: 400px;
+    top: 160px;
+    width: 300px;
+}
+
+
+.container-fluid
+{
+    position: relative;
+    min-height: 100%;
+}
+
+.well {
+	margin-top: 10px;
+	background-color: rgb(225, 213, 186) !important;
+	color: #622A2A;
+	letter-spacing: -1.5px;
+	border-radius: 10px;
+	font: 2em Georgia,Times,serif;
+	min-height: 73px;
+}
+
+.recipe_icon {
+	background: transparent url("../images/date.png") no-repeat scroll left top;
+	float: left;
+	width: 68px;
+	height: 68px;
+}
+
+#complete_content {
+    margin: 0px auto;
+    width: 1000px;
+    padding-top: 10px;
+}
+
+#recipe_content {
+	width: 1000px;
+	background: transparent url("../images/bg-post.png") repeat-y scroll 0% 0%;
+	float: left;
+	overflow: hidden;
+	padding-bottom: 20px;
+}
+
+#instruction {
+	float: left;
+	width: 650px;
+	font-family: Arial,Verdana,Tahoma,San-serif;
+	margin-top: 20px;
+}
+
+.instruction_content {
+    width: 650px;
+    float: left;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding-right: 20px;
+}
+
+#instruction img {
+	background-image: none; 
+	border-bottom: 0px; 
+	border-left: 0px; 
+	display: inline; 
+	border-top: 0px; 
+	border-right: 0px; 
+}
+
+#instruction h2 {
+	color: #622A2A;
+	letter-spacing: -1.5px;
+	border-radius: 10px;
+	font: 2em Georgia,Times,serif;
+	margin-left: 20px;
+	//background: transparent url("../images/hr-brian-litzinger-one.png") no-repeat scroll center bottom;
+	//padding-bottom: 30px;
+	margin-bottom: 15px;
+	//background-size: 670px 60px;
+	//margin-top: 290px;
+}
+
+.edit_mode {
+	margin-top: 290px;
+}
+
+.ingredient {
+    margin-top: 0px;
+    background: transparent none repeat scroll 0% 0%;
+    width: 290px;
+    overflow: hidden;
+    float: right;
+}
+
+.ingredient_title {
+	background: transparent url("../images/title.png") no-repeat scroll center top;
+	width: 290px;
+	height: 43px;
+}
+
+.ingredient h2 {
+	background: transparent url("../images/hr-brian-litzinger-one.png") no-repeat scroll center bottom;
+	font: 2em Georgia,Times,serif;
+	letter-spacing: -1.5px;
+	color: #5F2A2A;
+	padding-bottom: 30px;
+	margin: 15px;
+	background-size: 270px 60px;
+}
+
+.ingredient_content {
+	color: #885252;
+	font-family: Arial,Verdana,Tahoma,San-serif;
+	margin-left: 15px;
+	padding: 15px;
+	margin-bottom: 15px;
+}
+
+.note-editor {
+	margin-left: 20px;
+}
+
+.ingredient .note-editor {
+	margin-right: 20px;
+}
+
+#edit, #save {
+	width: 100px;
+	margin-top: 60px;
+	margin-left: 40px;
+}
+
+#save {
+	
+}
+
+#recipe_name {
+	width: 650px;
+	display: inline;
+}
+
+
+
+.image_zone {
+	margin-left: 20px;
+}
+
+.upload_image {
+	width: 260px;
+	margin-left: 20px;
+}
+
+.upload-drop-zone {
+	height: 280px;
+	width: 310px;
+	border-width: 3px;
+	margin-bottom: 20px;
+	position: absolute;
+}
+
+
+.upload-drop-zone {
+	color: #ccc;
+	//border-style: dashed;
+	border-color: #ccc;
+	line-height: 200px;
+	text-align: center
+}
+			
+
+.upload-drop-zone input[type="file"] {
+    top: 0px;
+    right: 0px;
+    min-width: 100%;
+    min-height: 100%;
+    text-align: right;
+    opacity: 0;
+    background: transparent none repeat scroll 0px 0px;
+    cursor: inherit;
+    display: block;
+    position: absolute;
+}
+
+#preview_image {
+	height: auto;
+	width: auto;
+	max-width: 300px;
+	max-height: 270px;
+}
+
+.dropdown {
+	
+	right: 10px;
+	width: 250px;
+	border-radius: 10px;
+	top: 6px;
+	
+}
+
+
+.dropdown {
+	letter-spacing: 1px;
+	float: right;
+	//right: 150px;
+}
+
+#idCollection {
+	background-color: rgb(51, 122, 183);
+	color: white;
+}
+
+#idCollection > option {
+	line-height: 2;
+	font-weight: 400;
+	padding: 5px 20px;
+	background-color: rgb(255, 255, 255);
+	color: black;
+}

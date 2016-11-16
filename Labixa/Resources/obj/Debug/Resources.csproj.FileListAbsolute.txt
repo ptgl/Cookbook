@@ -1,0 +1,39 @@
+C:\Users\Gia Linh\Documents\Visual Studio 2013\Projects\vimt_temp - Copy\vimt_temp1\Labixa\Resources\bin\Debug\Resources.dll
+C:\Users\Gia Linh\Documents\Visual Studio 2013\Projects\vimt_temp - Copy\vimt_temp1\Labixa\Resources\bin\Debug\Resources.pdb
+C:\Users\Gia Linh\Documents\Visual Studio 2013\Projects\vimt_temp - Copy\vimt_temp1\Labixa\Resources\bin\Debug\en\Resources.resources.dll
+C:\Users\Gia Linh\Documents\Visual Studio 2013\Projects\vimt_temp - Copy\vimt_temp1\Labixa\Resources\bin\Debug\vi\Resources.resources.dll
+C:\Users\Gia Linh\Documents\Visual Studio 2013\Projects\vimt_temp - Copy\vimt_temp1\Labixa\Resources\obj\Debug\Resources.csprojResolveAssemblyReference.cache
+C:\Users\Gia Linh\Documents\Visual Studio 2013\Projects\vimt_temp - Copy\vimt_temp1\Labixa\Resources\obj\Debug\Resources.Resources.resources
+C:\Users\Gia Linh\Documents\Visual Studio 2013\Projects\vimt_temp - Copy\vimt_temp1\Labixa\Resources\obj\Debug\Resources.Resources.en.resources
+C:\Users\Gia Linh\Documents\Visual Studio 2013\Projects\vimt_temp - Copy\vimt_temp1\Labixa\Resources\obj\Debug\Resources.Resources.vi.resources
+C:\Users\Gia Linh\Documents\Visual Studio 2013\Projects\vimt_temp - Copy\vimt_temp1\Labixa\Resources\obj\Debug\Resources.csproj.GenerateResource.Cache
+C:\Users\Gia Linh\Documents\Visual Studio 2013\Projects\vimt_temp - Copy\vimt_temp1\Labixa\Resources\obj\Debug\en\Resources.resources.dll
+C:\Users\Gia Linh\Documents\Visual Studio 2013\Projects\vimt_temp - Copy\vimt_temp1\Labixa\Resources\obj\Debug\vi\Resources.resources.dll
+C:\Users\Gia Linh\Documents\Visual Studio 2013\Projects\vimt_temp - Copy\vimt_temp1\Labixa\Resources\obj\Debug\Resources.dll
+C:\Users\Gia Linh\Documents\Visual Studio 2013\Projects\vimt_temp - Copy\vimt_temp1\Labixa\Resources\obj\Debug\Resources.pdb
+C:\Users\Gia Linh\Documents\Visual Studio 2013\Projects\Coocbook\Labixa\Resources\bin\Debug\Resources.dll
+C:\Users\Gia Linh\Documents\Visual Studio 2013\Projects\Coocbook\Labixa\Resources\bin\Debug\Resources.pdb
+C:\Users\Gia Linh\Documents\Visual Studio 2013\Projects\Coocbook\Labixa\Resources\bin\Debug\en\Resources.resources.dll
+C:\Users\Gia Linh\Documents\Visual Studio 2013\Projects\Coocbook\Labixa\Resources\bin\Debug\vi\Resources.resources.dll
+C:\Users\Gia Linh\Documents\Visual Studio 2013\Projects\Coocbook\Labixa\Resources\obj\Debug\Resources.csprojResolveAssemblyReference.cache
+C:\Users\Gia Linh\Documents\Visual Studio 2013\Projects\Coocbook\Labixa\Resources\obj\Debug\Resources.Resources.resources
+C:\Users\Gia Linh\Documents\Visual Studio 2013\Projects\Coocbook\Labixa\Resources\obj\Debug\Resources.Resources.en.resources
+C:\Users\Gia Linh\Documents\Visual Studio 2013\Projects\Coocbook\Labixa\Resources\obj\Debug\Resources.Resources.vi.resources
+C:\Users\Gia Linh\Documents\Visual Studio 2013\Projects\Coocbook\Labixa\Resources\obj\Debug\Resources.csproj.GenerateResource.Cache
+C:\Users\Gia Linh\Documents\Visual Studio 2013\Projects\Coocbook\Labixa\Resources\obj\Debug\en\Resources.resources.dll
+C:\Users\Gia Linh\Documents\Visual Studio 2013\Projects\Coocbook\Labixa\Resources\obj\Debug\vi\Resources.resources.dll
+C:\Users\Gia Linh\Documents\Visual Studio 2013\Projects\Coocbook\Labixa\Resources\obj\Debug\Resources.dll
+C:\Users\Gia Linh\Documents\Visual Studio 2013\Projects\Coocbook\Labixa\Resources\obj\Debug\Resources.pdb
+C:\Users\Gia Linh\Documents\Visual Studio 2013\Projects\Cookbook\Labixa\Resources\bin\Debug\Resources.dll
+C:\Users\Gia Linh\Documents\Visual Studio 2013\Projects\Cookbook\Labixa\Resources\bin\Debug\Resources.pdb
+C:\Users\Gia Linh\Documents\Visual Studio 2013\Projects\Cookbook\Labixa\Resources\bin\Debug\en\Resources.resources.dll
+C:\Users\Gia Linh\Documents\Visual Studio 2013\Projects\Cookbook\Labixa\Resources\bin\Debug\vi\Resources.resources.dll
+C:\Users\Gia Linh\Documents\Visual Studio 2013\Projects\Cookbook\Labixa\Resources\obj\Debug\Resources.csprojResolveAssemblyReference.cache
+C:\Users\Gia Linh\Documents\Visual Studio 2013\Projects\Cookbook\Labixa\Resources\obj\Debug\Resources.Resources.resources
+C:\Users\Gia Linh\Documents\Visual Studio 2013\Projects\Cookbook\Labixa\Resources\obj\Debug\Resources.Resources.en.resources
+C:\Users\Gia Linh\Documents\Visual Studio 2013\Projects\Cookbook\Labixa\Resources\obj\Debug\Resources.Resources.vi.resources
+C:\Users\Gia Linh\Documents\Visual Studio 2013\Projects\Cookbook\Labixa\Resources\obj\Debug\Resources.csproj.GenerateResource.Cache
+C:\Users\Gia Linh\Documents\Visual Studio 2013\Projects\Cookbook\Labixa\Resources\obj\Debug\en\Resources.resources.dll
+C:\Users\Gia Linh\Documents\Visual Studio 2013\Projects\Cookbook\Labixa\Resources\obj\Debug\vi\Resources.resources.dll
+C:\Users\Gia Linh\Documents\Visual Studio 2013\Projects\Cookbook\Labixa\Resources\obj\Debug\Resources.dll
+C:\Users\Gia Linh\Documents\Visual Studio 2013\Projects\Cookbook\Labixa\Resources\obj\Debug\Resources.pdb

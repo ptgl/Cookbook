@@ -1,0 +1,316 @@
+﻿
+@{
+    Layout = null;
+}
+@model Labixa.Areas.Admin.ViewModel.LoginFormModel
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Online Cookbook</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="~/Content/Cookbook/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="~/Content/Cookbook/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="~/Content/Cookbook/fonts/HoneyScript-SemiBold.ttf">
+    <link href="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.8.9/themes/blitzer/jquery-ui.css"
+          rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+
+    <!-- jQuery -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="~/Content/Cookbook/js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="~/Content/Cookbook/js/bootstrap.min.js"></script>
+    <script src="~/Content/Cookbook/js/bootstrapValidator.min.js"></script>
+
+    <!--Custom JavaScript-->
+    <script src="~/Content/Cookbook/js/script.js"></script>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="#" title="Online Cookbook">
+                    <img alt="Logo" src="~/Content/Cookbook/images/icon-chef.png"></img>
+                    <div class="brand">cookbook</div>
+                </a>
+
+            </div>
+           
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
+                @if (Session["user"] == null){
+                <ul class="nav navbar-nav navbar-right">
+                    <a class="btn navbar-btn" data-toggle="modal" href="#signinModal">SIGN IN</a>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <a class="btn navbar-btn" data-toggle="modal" href="#registerModal">REGISTER</a>
+                </ul>
+                }
+                else
+                {
+                    <div class="nav navbar-nav navbar-right">Welcome, @Session["user"]</div>
+                    <a href="/Dashboard/Logout">Log out</a>
+                }
+            </div>
+            
+
+            <!-- Sign in modal-->
+            <div class="modal fade" id="signinModal" role="dialog">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <form id="loginForm" class="form-horizontal" action="#" method="post">
+                                <legend>SIGN IN</legend>
+                                <div id="error1" style="color:red"></div><br />
+                                <div class="form-group">
+                                    <label for="inputEmail" class="col-lg-2 control-label">Email:</label>
+                                    <div class="col-lg-10">
+                                        <input  class="form-control" name="email" id="inputEmail" placeholder="Email" type="text">
+                                       
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputPassword" class="col-lg-2 control-label">Password:</label>
+                                    <div class="col-lg-10">
+                                        <input class="form-control" name="pass" id="inputPassword" placeholder="Password" type="password">
+
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="col-lg-10 col-lg-offset-2">
+                                        <a href="javascript:void(0)" onclick="submit();" class="btn btn-primary" >Sign in</a>
+                                        <button id="cancel1" type="reset" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                                    </div>
+                                </div>
+                                
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+           
+
+                <script>
+
+                    function submit() {
+                        var pass = $('#inputPassword').val();
+                        var email = $('#inputEmail').val();
+                        if (pass.length == 0 || email.length == 0) {
+                            $('#error1').text("Please fill all fields");
+                        }
+                        else if(!checkEmail(email)){
+                             $('#error1').text("Email adsress in invalid format");
+                        }
+                        else {
+
+                            $.ajax({
+                                type: "POST",
+                                url: "/Dashboard/Login",
+                                data: $("#loginForm").serialize(),
+                                // contentType: 'application/json; charset=utf-8',
+                                success: function (data) {
+                                    if (data.result == "ok") {
+                                        //alert("OK");
+                                        window.location = "/Dashboard/Homepage";
+                                    }
+                                    else {
+                                        $('#error1').text(data.result);
+                                    }
+
+                                },
+                                error: function () {
+                                    alert("error");
+                                }
+                            });
+
+                        }
+                    }
+
+
+
+                </script>
+
+                <!-- Register modal-->
+                <div class="modal fade" id="registerModal" role="dialog">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-body">
+                                <form id="register" class="form-horizontal" action="/Dashboard/Register" method="post">
+                                    <legend>REGISTER</legend>
+                                    <div id="error" style="color:red"></div><br />
+                                    <div class="form-group">
+                                        <label for="inputEmail" class="col-lg-3 control-label">Email:</label>
+                                        <div class="col-lg-9">
+                                            <input class="form-control" name="email" id="Email" placeholder="Email" type="text">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="inputPassword" class="col-lg-3 control-label">Password:</label>
+                                        <div class="col-lg-9">
+                                            <input class="form-control" id="Password" name="pass" placeholder="Password" type="password">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="confirmedPassword" class="col-lg-3 control-label">Confirm password:</label>
+                                        <div class="col-lg-9">
+                                            <input class="form-control" id="confirmedPassword" name="cfpass" placeholder="Confirm password" type="password">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="inputname" class="col-lg-3 control-label">Username:</label>
+                                        <div class="col-lg-9">
+                                            <input class="form-control" name="name" id="inputname" placeholder="Username" type="text">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="col-lg-9 col-lg-offset-3">
+                                            <a href="javascript:void(0)" onclick="submitReg();" class="btn btn-primary">Register</a>
+                                            @*<input type="submit" class="btn btn-primary" value="Register">*@
+                                            <button id="cancel2" type="reset" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                                        </div>
+                                    </div>
+
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+    </nav>
+
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+            <li data-target="#myCarousel" data-slide-to="3"></li>
+        </ol>
+
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+            <div class="item active">
+                <img src="~/Content/Cookbook/images/cooking-wallpapers-hd.jpg" alt="Chania" width="460" height="345">
+            </div>
+
+            <div class="item">
+                <img src="~/Content/Cookbook/images/9021069616262_168341_Alt12.jpg" alt="Chania" width="460" height="345">
+            </div>
+
+            <div class="item">
+                <img src="~/Content/Cookbook/images/0929045623_1.jpg" alt="Flower" width="460" height="345">
+            </div>
+
+            <div class="item">
+                <img src="~/Content/Cookbook/images/18724799-Recipe-cookbook-chili-cherry-tomatoes-spices-red-and-white-tablecloth-on-wood-background-Stock-Photo.jpg" alt="Flower" width="460" height="345">
+            </div>
+        </div>
+
+        <!-- Left and right controls -->
+        <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+    </div>
+
+</body>
+</html>
+
+<script>
+
+
+    function checkEmail(email) {
+       
+        var re = /[A-Z0-9._%+-]+@@[A-Z0-9.-]+.[A-Z]{2,4}/igm;
+        if (!re.test(email)) {
+            $('#msg').text("Email address is in invalid format");
+            return false;
+        }
+        return true;
+    }
+    
+
+
+   function submitReg() {
+        var pass = $('#Password').val();
+        var cfpass = $('#confirmedPassword').val();
+        var email = $('#Email').val().length;
+        var name = $('#inputname').val().length;
+
+
+        if(pass.length == 0 || cfpass.length == 0 || email == 0 || name == 0){
+            $('#error').text("Please fill all fields. ");
+        }
+        else if (pass != cfpass) {
+            $('#error').text("Your password and confirm password should be the same.");
+            //return false;
+        }
+        else if (!checkEmail($('#Email').val())) {
+             $('#error').text("Email address in invalid format.");
+        }
+        else {
+
+            $.ajax({
+                type: "POST",
+                url: "/Dashboard/Register",
+                data: $("#register").serialize(),
+                // contentType: 'application/json; charset=utf-8',
+                success: function (data) {
+                    if (data.result == "ok") {
+                        window.location = "/Dashboard/Homepage";
+                    }
+                    else {
+                        $('#error').text(data.result);
+                    }
+
+                },
+                error: function () {
+                    alert("error");
+                }
+            });
+
+
+
+        }
+    }
+
+
+
+    $("#cancel1").click(function () {
+        $("#loginForm").trigger("reset");
+        $('#error1').text("");
+
+    })
+
+    $("#cancel2").click(function () {
+        $("#register").trigger("reset");
+        $('#error').text("");
+
+    })
+
+</script>
+

@@ -1,0 +1,351 @@
+.container-fluid
+{
+    position: relative;
+    min-height:100%;
+}
+
+.menu-bar {
+	margin-top: 15px;
+}
+
+#leftbar {
+	background-color: #2D343A;
+	position: absolute;
+	height: 100%;
+	overflow: hidden;
+	margin-left: 10px;
+}
+
+#main-content {
+	position: relative;
+	float: right;
+	overflow: hidden;
+}
+
+/*
+ * Style tweaks
+ * --------------------------------------------------
+ */
+body {  
+  background-color: #DFDCD7;
+}
+footer {
+  padding-left: 15px;
+  padding-right: 15px;
+  background-color: #fff;
+}
+
+.menu-bar {
+	margin-top: 15px;
+}
+
+#leftbar {
+	background-color: #2D343A;
+	position: absolute;
+	height: 100%;
+	overflow: hidden;
+}
+
+#main-content {
+	position: relative;
+	float: right;
+	overflow: hidden;
+	padding-left: 30px;
+}
+
+/*
+ * Off Canvas
+ * --------------------------------------------------
+ */
+@media screen and (max-width: 768px) {
+  .row-offcanvas {
+    position: relative;
+    -webkit-transition: all 0.25s ease-out;
+    -moz-transition: all 0.25s ease-out;
+    transition: all 0.25s ease-out;
+  }
+
+  .row-offcanvas-left
+  .sidebar-offcanvas {
+    left: -33%;
+  }
+
+  .row-offcanvas-left.active {
+    left: 33%;
+  }
+
+  .sidebar-offcanvas {
+    position: absolute;
+    top: 0;
+    width: 33%;
+    margin-left: 10px;
+  }
+}
+
+
+/* Sidebar navigation */
+.nav-sidebar {
+  background-color: #f5f5f5;
+  margin-right: -15px;
+  margin-bottom: 20px;
+  margin-left: -15px;
+}
+.nav-sidebar > li > a {
+  padding-right: 20px;
+  padding-left: 20px;
+}
+.nav-sidebar > .active > a {
+  color: #fff;
+  background-color: #428bca;
+}
+
+html, body { height: 100%;}
+
+.container {
+	min-height: 100%;
+	overflow: hidden;
+}
+
+#col1, #col2, #col3 {
+	bottom: 0px;
+}
+
+/*
+ * Main content
+ */
+
+.main {
+  padding: 20px;
+  background-color: #fff;
+}
+@media (min-width: 768px) {
+  .main {
+    padding-right: 40px;
+    padding-left: 40px;
+  }
+}
+.main .page-header {
+  margin-top: 0;
+}
+
+.navbar-inverse {
+  background-color: #2C9CB2;
+  border-color: transparent;
+}
+
+.navbar-inverse .navbar-brand {
+    color: #D5E5E4;
+}
+
+.navbar-inverse .navbar-nav > li > a{
+  color: #D5E5E4;
+}
+
+#logout-button {
+  margin-right: 15px;
+}
+
+hr {
+  border-color: #C6C6C6 -moz-use-text-color -moz-use-text-color;
+}
+
+#add-collection {
+  color: #748847;
+}
+
+//Recipe list
+.wrap {
+       overflow: hidden;
+       margin: 10px;
+    }
+    .box {
+       float: left;
+       position: relative;
+       width: 250px;
+       height: 250px;
+       padding-bottom: 20%;
+    }
+    .boxInner {
+       position: absolute;
+       left: 10px;
+       right: 10px;
+       top: 10px;
+       bottom: 10px;
+       overflow: hidden;
+    }
+    .boxInner img {
+       width: 100%;
+    }
+    .boxInner .titleBox_bottom {
+       position: absolute;
+       bottom: 0;
+       left: 0;
+       right: 0;
+       margin-bottom: -50px;
+       background: #000;
+       background: rgba(0, 0, 0, 0.5);
+       color: #FFF;
+       padding: 10px;
+       text-align: right;
+       -webkit-transition: all 0.3s ease-out;
+       -moz-transition: all 0.3s ease-out;
+       -o-transition: all 0.3s ease-out;
+       transition: all 0.3s ease-out;
+    }
+
+	.boxInner .titleBox_top {
+       position: absolute;
+       top: 0;
+       left: 0;
+       right: 0;
+       margin-top: -50px;
+       background: #000;
+       background: rgba(0, 0, 0, 0.5);
+       color: #FFF;
+       overflow: hidden;
+       padding: 10px;
+       text-align: left;
+       -webkit-transition: all 0.3s ease-out;
+       -moz-transition: all 0.3s ease-out;
+       -o-transition: all 0.3s ease-out;
+       transition: all 0.3s ease-out;
+    }
+
+    .boxInner .titleBox_bottom i {
+	margin-right: 10px;
+	color: #9D9D9D;
+    }
+
+    .boxInner .titleBox_bottom i:hover {
+	color: white;
+    }
+
+    body.no-touch .boxInner:hover .titleBox_bottom, body.touch .boxInner.touchFocus .titleBox_bottom {
+       margin-bottom: 0;
+    }
+
+    body.no-touch .boxInner:hover .titleBox_top, body.touch .boxInner.touchFocus .titleBox_top {
+       margin-top: 0;
+    }
+    @media only screen and (max-width : 480px) {
+       /* Smartphone view: 1 tile */
+       .box {
+          width: 100%;
+          padding-bottom: 100%;
+       }
+    }
+    @media only screen and (max-width : 650px) and (min-width : 481px) {
+       /* Tablet view: 2 tiles */
+       .box {
+          width: 50%;
+          padding-bottom: 50%;
+       }
+    }
+    @media only screen and (max-width : 1050px) and (min-width : 651px) {
+       /* Small desktop / ipad view: 3 tiles */
+       .box {
+          width: 33.3%;
+          padding-bottom: 33.3%;
+       }
+    }
+    @media only screen and (max-width : 1290px) and (min-width : 1051px) {
+       /* Medium desktop: 4 tiles */
+       .box {
+          width: 25%;
+          padding-bottom: 25%;
+       }
+    }
+
+
+.coll-action {
+	float: right;
+	display: inline-block;
+}
+
+.coll-action > .btn-default {
+	background-color: #2D343A;
+	color: white;
+}
+
+.current-collection {
+	display: inline-block;
+}
+
+.current-collection h3 {
+	margin-top: 5px;
+	margin-bottom: 3px;
+}
+
+.logo {
+	padding-left: 20px;
+	width: 85%;
+	margin-bottom: 15px;
+}
+
+.user {
+	color: #DFDCD7;
+	text-align: center;
+}
+
+.user hr {
+	height: 30px; 
+  	border-style: solid; 
+  	border-color: #8c8b8b; 
+  	border-width: 1px 0 0 0; 
+  	border-radius: 20px; 
+}
+
+.user hr:before { 
+  display: block; 
+  content: ""; 
+  height: 30px; 
+  margin-top: -31px; 
+  border-style: solid; 
+  border-color: #8c8b8b; 
+  border-width: 0 0 1px 0; 
+  border-radius: 20px; 
+}
+
+.add-col{
+	width: 100%;
+	text-align: left;
+	background-color: #DFDCD7;
+	border-radius: 25px;
+	margin-bottom: 25px;
+}
+
+.ribbon {
+	background-color: #F26949 !important;
+	//background-color: transparent!important;
+	margin-bottom: 5px;
+	//background-image: url("images/the-ribbon-287140_640.png");
+	//background-size: 200px auto;
+}
+
+.nav-stacked> li > a {
+	color: #2D343A;
+}
+
+.nav-stacked> li > a:hover {
+	color: #DFDCD7;
+}
+
+.nav-stacked > li.active > a {
+    width: 110%;
+}
+
+
+#bcr {
+	margin-top: 20px;
+}
+
+.recipe-content {
+	background-color: white;
+	height: 100%;
+	padding-top: 20px;
+}
+
+.modal-title {
+ color: #F26949;
+}
+

@@ -1,0 +1,170 @@
+﻿@{
+    Layout = null;
+}
+
+@model Labixa.Areas.Admin.ViewModel.RecipeViewModel
+@using Outsourcing.Core
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Online Cookbook</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="~/Content/Cookbook/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/Cookbook/css/summernote.css" type="text/css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+</head>
+
+<!-- Custom CSS -->
+<link href="~/Content/Cookbook/css/editor.css" rel="stylesheet">
+<link href="~/Content/Cookbook/css/recipe.css" rel="stylesheet">
+
+    </head>
+
+<body class="no-touch">
+
+    <!-- jQuery -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <!--<script src="js/jquery.js"></script>-->
+    <!-- Bootstrap Core JavaScript -->
+    <script src="~/Content/Cookbook/js/bootstrap.min.js"></script>
+    @*<script src="~/Content/Cookbook/js/summernote.min.js"></script>*@
+    <script src="~/Content/ckeditor/ckeditor.js"></script>
+    <script src="~/Content/ckeditor/config.js"></script>
+    <!--Custom JavaScript
+    <script src="js/script.js"></script>-->
+
+
+    <form action="/Recipe/Edit" method="post" enctype="multipart/form-data">
+
+        <!--Menu bar-->
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-2" id="leftbar">
+                    <!-- Left column -->
+                    <div class="menu-bar">
+                        <a href="#" title="Online Cookbook">
+                            <img class="logo" alt="Logo" src="~/Content/Cookbook/images/icon-chef.png"></img>
+                        </a>
+                    </div>
+                    <button id="edit" class="btn btn-info" type="submit">
+                        <span class="glyphicon glyphicon-check"></span> Save
+                    </button>
+                    <a id="save" href="/Dashboard/Homepage" class="btn btn-success" type="button">
+                        <span class="glyphicon glyphicon-circle-arrow-left"></span> Back
+                    </a>
+                </div>
+
+
+                <!--Main content-->
+                <div class="col-sm-10" id="main-content">
+                    <!-- column 2 -->
+                    <div class="well">
+                        <div class="recipe_icon"></div>
+                        <div id="recipe_name">
+                            <textarea name="Name" style="width: 950px; height: 40px; resize: none" >@Model.Name</textarea>
+                            
+                        </div>
+                    </div>
+                   
+                    @Html.HiddenFor(model => model.URL)
+                    @Html.HiddenFor(model => model.isDelete)
+                    @Html.HiddenFor(model => model.LastEdit)
+                    @Html.HiddenFor(model => model.DateCreated)
+                    @Html.HiddenFor(model => model.Id)
+                    @Html.HiddenFor(model => model.idCollection)
+                    <div id="complete_content">
+                        <div id="recipe_content">
+                            <div id="instruction">
+                               
+                                <div id="error" class="error">@Session["error"]</div>
+                                <div class="upload_image">
+                                    <div class="upload-drop-zone" id="drop-zone">
+                                        <div class="preview">
+                                            <img id="preview_image" src="@Model.URL" style="margin-top: 25px;" width="100" height="100">
+                                        </div>
+                                        <input id="avatar" name="image" type="file" accept="image/*" onchange="previewImage(event)">
+                                    </div>
+                                </div>
+
+                                <h2 class="edit_mode">Instruction</h2>
+                                <div class="instruction_content">
+                                    <textarea id="editor" class="ckeditor" name="Instruction">@Model.Instruction</textarea>
+
+                                </div>
+                            </div>
+                            <div class="ingredient">
+                                <h2>Ingredients</h2>
+                                <div class="ingredient_content">
+                                    <textarea id="editor1" class="ckeditor" name="Ingredient">@Model.Ingredient</textarea>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+    </form>
+
+</body>
+</html>
+
+
+
+<script>
+
+
+    CKEDITOR.replace('editor', {
+        toolbar: [
+            { name: 'insert', items: ['Table', 'HorizontalRule', 'Smiley'] },
+            ['Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord', '-', 'Undo', 'Redo'],			// Defines toolbar group without name.
+            { name: 'paragraph', items: ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock'] },
+            ['Link'],
+            '/',																					// Line break - next group will be placed in new line.
+            { name: 'basicstyles', items: ['Bold', 'Italic', 'Underline', 'RemoveFormat'] },
+            { name: 'styles', items: ['Format', 'Font', 'FontSize'] },
+	        { name: 'colors', items: ['TextColor', 'BGColor'] },
+	        { name: 'tools', items: ['Maximize'] },
+	        { name: 'others', items: ['-'] },
+	        { name: 'about', items: ['About'] }
+        ]
+    });
+
+
+    CKEDITOR.replace('editor1', {
+        toolbar: [
+            { name: 'insert', items: ['Table', 'HorizontalRule', 'Smiley'] },
+            //['Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord', '-', 'Undo', 'Redo'],			// Defines toolbar group without name.
+            { name: 'paragraph', items: ['NumberedList', 'BulletedList', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock'] },
+            ['Link'],
+            '/',																					// Line break - next group will be placed in new line.
+            { name: 'basicstyles', items: ['Bold', 'Italic', 'Underline', 'RemoveFormat'] },
+            { name: 'styles', items: ['Font', 'FontSize'] },
+	        { name: 'colors', items: ['TextColor', 'BGColor'] },
+	        { name: 'tools', items: ['Maximize'] },
+	        { name: 'others', items: ['-'] },
+	        { name: 'about', items: ['About'] }
+        ]
+    });
+
+    var previewImage = function (event) {
+        var output = document.getElementById('preview_image');
+        output.src = URL.createObjectURL(event.target.files[0]);
+    };
+
+</script>
